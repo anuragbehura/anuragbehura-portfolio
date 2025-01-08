@@ -3,8 +3,9 @@ import { fontSans } from "@/config/fonts";
 import "./globals.css";
 import ThemeProvider from "@/components/ThemeProvider";
 import Navbar from "@/components/Navbar";
-import Footer from "@/components/Footer";
+// import Footer from "@/components/Footer";
 import { AOSInit } from "./aos";
+import FloatingMusicPlayerWithStyles from "@/components/FloatingMusicPlayer";
 
 
 export const metadata: Metadata = {
@@ -36,28 +37,35 @@ export default function RootLayout({
 }) {
   return (
     <html suppressHydrationWarning lang="en">
-
       <AOSInit />
-
-
       <body
         className={`${fontSans.variable} antialiased min-h-screen bg-background font-sans`}
       >
         <ThemeProvider>
           <Navbar />
-          <section className="flex flex-col items-center justify-center gap-4 ">
+          <main className="flex flex-col items-center justify-center gap-4 pb-24">
             <div className="inline-block justify-center md:ml-10 sm:ml-10">
               {children}
+              <FloatingMusicPlayerWithStyles />
             </div>
-          {/* <Footer /> */}
-          </section>
+          </main>
+          {/* Bottom gradient blur */}
+          {/* <div className="gradient-blur fixed bottom-0 left-0 right-0 z-[90]" style={{ height: '90px' }}>
+            <div></div>
+            <div></div>
+            <div></div>
+            <div></div>
+            <div></div>
+            <div></div>
+          </div> */}
         </ThemeProvider>
 
+        {/* Move these to head if possible */}
         <link
           rel="stylesheet"
-          href="https://unpkg.com/aos@2.3.1/dist/aos.css"
+          href="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.css"
         />
-        <script src="https://unpkg.com/aos@2.3.1/dist/aos.js" defer></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.js"></script>
       </body>
     </html>
   );
