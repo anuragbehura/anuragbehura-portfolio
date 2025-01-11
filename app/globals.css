@@ -1,6 +1,26 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+@import 'aos/dist/aos.css';
+
+/* Custom scrollbar */
+
+/* width */
+::-webkit-scrollbar{
+  width: 5px;
+}
+
+/* Tarck */
+::-webkit-scrollbar-track{
+  background: #7aa86b;
+}
+
+/* Handle */
+::-webkit-scrollbar-thumb {
+  background: #4db13b;
+}
+
 @layer base {
   :root {
     --background: 0 0% 100%;
