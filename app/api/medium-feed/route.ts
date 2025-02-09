@@ -3,6 +3,14 @@ import axios from 'axios';
 import { parseString } from 'xml2js';
 import { JSDOM } from 'jsdom';
 
+interface RSSItem {
+    title: string[];
+    link: string[];
+    pubDate: string[];
+    'content:encoded': string[];
+    category?: string[];
+}
+
 export interface BlogPost {
     title: string;
     link: string;
@@ -58,7 +66,7 @@ export async function GET(request: Request) {
                 const items = result.rss.channel[0].item;
                 const posts: BlogPost[] = items
                     .slice(0, limit) // Only take the first 2 posts
-                    .map((item: any) => {
+                    .map((item: RSSItem) => {
                         const content = item['content:encoded'][0];
                         const { imageUrl, excerpt } = extractImageAndExcerpt(content);
 
