@@ -43,7 +43,7 @@ function extractImageAndExcerpt(content: string): { imageUrl: string; excerpt: s
 }
 
 function parseRSSFeed(data: string, username: string): Promise<Response> {
-    return new Promise((resolve, reject) => {
+    return new Promise((resolve) => {
         parseString(data, (err: Error | null, result: RSSFeed) => {
             if (err) {
                 resolve(NextResponse.json(
@@ -74,7 +74,7 @@ function parseRSSFeed(data: string, username: string): Promise<Response> {
                     });
 
                 resolve(NextResponse.json(posts));
-            } catch (error) {
+            } catch {
                 resolve(NextResponse.json(
                     { error: 'Failed to process RSS feed data' },
                     { status: 500 }
