@@ -66,7 +66,7 @@ export default function Home() {
             </p>
             <p className="text-sm sm:text-base">
               My projects reflect my dedication to leveraging cutting-edge technology to solve real-world problems, including a form builder platform.{" "}
-              As a tech enthusiast, I'm driven to learn, innovate, and make an impact. Let's collaborate to turn ideas into reality!
+              As a tech enthusiast, I&apos;m driven to learn, innovate, and make an impact. Let&apos;s collaborate to turn ideas into reality!
             </p>
             <ul className="pt-4 flex flex-col sm:flex-row gap-2 sm:gap-4 text-neutral-600 dark:text-neutral-300">
               <li>
