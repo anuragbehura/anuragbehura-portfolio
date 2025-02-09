@@ -262,7 +262,12 @@ export default function Home() {
 
             <div className="inline-flex items-center">
               <span className="bg-transparent px-2 py-1 text-sm transition-all duration-300 hover:bg-neutral-100 dark:hover:bg-neutral-800 rounded-md">
-                <Link href={"/"} className="text-neutral-600 hover:text-neutral-900 dark:text-neutral-400 dark:hover:text-neutral-100 inline-flex items-center gap-1">
+                <Link
+                  href={"/resume.pdf"}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="text-neutral-600 hover:text-neutral-900 dark:text-neutral-400 dark:hover:text-neutral-100 inline-flex items-center gap-1"
+                >
                   <FileText size={16} />
                   Resume
                 </Link>
@@ -271,7 +276,7 @@ export default function Home() {
 
           </div>
         </div>
- 
+
 
       </div>
     </section>
