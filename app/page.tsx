@@ -6,7 +6,8 @@ import { DynamicTextAnimate } from "@/components/DynamicTextAnimate";
 import { ArrowUpRight } from 'lucide-react';
 import Link from "next/link";
 import { useMediumPosts } from "@/hooks/useMediumPosts";
-import { Card, CardContent, CardHeader } from '@/components/ui/card';
+// import { Card, CardContent, CardHeader } from '@/components/ui/card';
+import { FileText } from 'lucide-react';
 
 export default function Home() {
   const { posts, loading, error } = useMediumPosts('anuragbehura');
@@ -168,7 +169,7 @@ export default function Home() {
             ) : (
               <div className="space-y-6">
                 {loading ? (
-                  Array(3).fill(0).map((_, i) => (
+                  Array(2).fill(0).map((_, i) => (
                     <div key={i} data-aos="fade-up" data-aos-delay={i * 100} className="mb-5">
                       <div className="rounded-lg border border-neutral-200 bg-neutral-50 dark:border-neutral-700 dark:bg-neutral-800">
                         <div className="flex flex-col md:flex-row animate-pulse">
@@ -251,6 +252,27 @@ export default function Home() {
             </li>
           </ul>
         </section>
+
+        {/* Experiences */}
+        <div className="mt-20">
+          <div className="mt-20 flex justify-between items-center">
+            <h2 data-aos="fade-in" className="font-medium text-2xl">
+              Eduction & Experience
+            </h2>
+
+            <div className="inline-flex items-center">
+              <span className="bg-transparent px-2 py-1 text-sm transition-all duration-300 hover:bg-neutral-100 dark:hover:bg-neutral-800 rounded-md">
+                <Link href={"/"} className="text-neutral-600 hover:text-neutral-900 dark:text-neutral-400 dark:hover:text-neutral-100 inline-flex items-center gap-1">
+                  <FileText size={16} />
+                  Resume
+                </Link>
+              </span>
+            </div>
+
+          </div>
+        </div>
+ 
+
       </div>
     </section>
   );

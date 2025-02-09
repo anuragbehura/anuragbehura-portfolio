@@ -31,6 +31,7 @@ function extractImageAndExcerpt(content: string): { imageUrl: string; excerpt: s
 export async function GET(request: Request) {
     const { searchParams } = new URL(request.url);
     const username = searchParams.get('username');
+    const limit = 2; // Limiting to 2 most recent posts
 
     if (!username) {
         return NextResponse.json(
@@ -55,21 +56,23 @@ export async function GET(request: Request) {
                 }
 
                 const items = result.rss.channel[0].item;
-                const posts: BlogPost[] = items.map((item: any) => {
-                    const content = item['content:encoded'][0];
-                    const { imageUrl, excerpt } = extractImageAndExcerpt(content);
+                const posts: BlogPost[] = items
+                    .slice(0, limit) // Only take the first 2 posts
+                    .map((item: any) => {
+                        const content = item['content:encoded'][0];
+                        const { imageUrl, excerpt } = extractImageAndExcerpt(content);
 
-                    return {
-                        title: item.title[0],
-                        link: item.link[0],
-                        pubDate: new Date(item.pubDate[0]).toISOString(),
-                        content,
-                        author: username,
-                        categories: item.category || [],
-                        imageUrl,
-                        excerpt
-                    };
-                });
+                        return {
+                            title: item.title[0],
+                            link: item.link[0],
+                            pubDate: new Date(item.pubDate[0]).toISOString(),
+                            content,
+                            author: username,
+                            categories: item.category || [],
+                            imageUrl,
+                            excerpt
+                        };
+                    });
 
                 resolve(NextResponse.json(posts));
             });

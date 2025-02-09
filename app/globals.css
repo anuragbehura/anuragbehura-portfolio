@@ -18,7 +18,8 @@
 
 /* Handle */
 ::-webkit-scrollbar-thumb {
-  background: #4db13b;
+  background: #287e18;
+  border-radius: 5px;
 }
 
 @layer base {
