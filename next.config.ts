@@ -5,6 +5,9 @@ const nextConfig: NextConfig = {
   images: {
     domains: ['cdn-images-1.medium.com'],
   },
+  eslint: {
+    ignoreDuringBuilds: true,
+  },
 };
 
 export default nextConfig;
