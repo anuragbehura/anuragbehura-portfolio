@@ -11,6 +11,14 @@ interface RSSItem {
     category?: string[];
 }
 
+interface RSSFeed {
+    rss: {
+        channel: Array<{
+            item: RSSItem[];
+        }>;
+    };
+}
+
 export interface BlogPost {
     title: string;
     link: string;
@@ -26,46 +34,29 @@ function extractImageAndExcerpt(content: string): { imageUrl: string; excerpt: s
     const dom = new JSDOM(content);
     const doc = dom.window.document;
 
-    // Try to find the first image
     const firstImg = doc.querySelector('img');
     const imageUrl = firstImg?.getAttribute('src') || '/api/placeholder/600/400';
 
-    // Get text content for excerpt
     const excerpt = doc.body.textContent?.trim().slice(0, 150) + '...' || '';
 
     return { imageUrl, excerpt };
 }
 
-export async function GET(request: Request) {
-    const { searchParams } = new URL(request.url);
-    const username = searchParams.get('username');
-    const limit = 2; // Limiting to 2 most recent posts
+function parseRSSFeed(data: string, username: string): Promise<Response> {
+    return new Promise((resolve, reject) => {
+        parseString(data, (err: Error | null, result: RSSFeed) => {
+            if (err) {
+                resolve(NextResponse.json(
+                    { error: 'Failed to parse RSS feed' },
+                    { status: 500 }
+                ));
+                return;
+            }
 
-    if (!username) {
-        return NextResponse.json(
-            { error: 'Username is required' },
-            { status: 400 }
-        );
-    }
-
-    try {
-        const response = await axios.get(`https://medium.com/feed/@${username}`, {
-            headers: { 'Content-Type': 'application/rss+xml' },
-        });
-
-        return new Promise((resolve) => {
-            parseString(response.data, (err, result) => {
-                if (err) {
-                    resolve(NextResponse.json(
-                        { error: 'Failed to parse RSS feed' },
-                        { status: 500 }
-                    ));
-                    return;
-                }
-
+            try {
                 const items = result.rss.channel[0].item;
                 const posts: BlogPost[] = items
-                    .slice(0, limit) // Only take the first 2 posts
+                    .slice(0, 2)
                     .map((item: RSSItem) => {
                         const content = item['content:encoded'][0];
                         const { imageUrl, excerpt } = extractImageAndExcerpt(content);
@@ -83,8 +74,33 @@ export async function GET(request: Request) {
                     });
 
                 resolve(NextResponse.json(posts));
-            });
+            } catch (error) {
+                resolve(NextResponse.json(
+                    { error: 'Failed to process RSS feed data' },
+                    { status: 500 }
+                ));
+            }
         });
+    });
+}
+
+export async function GET(request: Request): Promise<Response> {
+    const { searchParams } = new URL(request.url);
+    const username = searchParams.get('username');
+
+    if (!username) {
+        return NextResponse.json(
+            { error: 'Username is required' },
+            { status: 400 }
+        );
+    }
+
+    try {
+        const response = await axios.get(`https://medium.com/feed/@${username}`, {
+            headers: { 'Content-Type': 'application/rss+xml' },
+        });
+
+        return parseRSSFeed(response.data, username);
     } catch (error) {
         console.error('Error fetching Medium feed:', error);
         return NextResponse.json(
