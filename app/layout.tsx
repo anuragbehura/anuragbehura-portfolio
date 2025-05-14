@@ -55,7 +55,6 @@ export default function RootLayout({
       >
         <ThemeProvider>
           <Navbar />
-          // pb-24 
           <main className="
             flex 
             flex-col 
