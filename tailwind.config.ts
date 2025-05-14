@@ -9,6 +9,10 @@ export default {
   ],
   theme: {
   	extend: {
+		padding: {
+			'safe': 'env(safe-area-inset-top)',
+			'safe-b': 'env(safe-area-inset-bottom)',
+		},
   		colors: {
   			background: 'hsl(var(--background))',
   			foreground: 'hsl(var(--foreground))',

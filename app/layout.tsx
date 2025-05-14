@@ -51,18 +51,17 @@ export default function RootLayout({
           font-sans 
           overflow-x-hidden
           w-full
-          pt-safe
         `}
       >
         <ThemeProvider>
           <Navbar />
+          // pb-24 
           <main className="
             flex 
             flex-col 
             items-center 
             justify-center 
             gap-4 
-            pb-24 
             px-4 
             sm:px-6 
             md:px-8 
@@ -70,6 +69,8 @@ export default function RootLayout({
             w-full 
             max-w-7xl 
             mx-auto
+            pt-safe-b
+            pb-safe-b
           ">
             <div className="
               w-full
