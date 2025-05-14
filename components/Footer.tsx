@@ -1,10 +1,12 @@
 import React from 'react'
+import { Separator } from './ui/separator'
 
 export default function Footer() {
   return (
-    <div className='text-black'>
-      Footer
-    </div>
+    <section className="w-full relative antialiased max-w-xl mx-auto px-4 sm:px-6 md:px-8 py-6 sm:py-8 md:py-12">
+      <Separator orientation='horizontal'/>
+      <span className='flex justify-center text-base font-semibold'>Thank You❤️</span>
+    </section>
   )
 }
 
