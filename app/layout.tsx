@@ -5,6 +5,7 @@ import ThemeProvider from "@/components/ThemeProvider";
 import Navbar from "@/components/Navbar";
 import { AOSInit } from "./aos";
 import FloatingMusicPlayerWithStyles from "@/components/FloatingMusicPlayer";
+import Footer from "@/components/Footer";
 
 export const metadata: Metadata = {
   title: {
@@ -61,6 +62,7 @@ export default function RootLayout({
             items-center 
             justify-center 
             gap-4 
+            pb-24 
             px-4 
             sm:px-6 
             md:px-8 
@@ -69,7 +71,6 @@ export default function RootLayout({
             max-w-7xl 
             mx-auto
             pt-safe-b
-            pb-safe-b
           ">
             <div className="
               w-full
@@ -85,6 +86,7 @@ export default function RootLayout({
               </div>
             </div>
           </main>
+          <Footer />
         </ThemeProvider>
         <AOSInit />
       </body>
