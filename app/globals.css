@@ -4,7 +4,9 @@
 
 @import 'aos/dist/aos.css';
 
-
+.pt-safe {
+  padding-top: env(safe-area-inset-top);
+}
 
 /* Custom scrollbar */
 

@@ -14,7 +14,13 @@ export const metadata: Metadata = {
   description: "Hi, I'm Anurag Behura, a 2024 Computer Science graduate passionate about creating impactful web applications and AI-driven tools. With expertise in Next.js, Node.js, and MongoDB, I focus on building scalable, future-ready solutions. Explore my work and let's collaborate to turn bold ideas into exceptional digital experiences! 🚀",
   icons: {
     icon: "/me.png"
-  }
+  },
+  appleWebApp: {
+    capable: true,
+    statusBarStyle: 'black-translucent',
+    title: "Anurag Behura",
+    startupImage: ['/me.png']
+  },
 };
 
 export const viewport: Viewport = {
@@ -26,6 +32,7 @@ export const viewport: Viewport = {
   initialScale: 1,
   maximumScale: 1,
   userScalable: false,
+  viewportFit: 'cover', // This is for ios notch handling
 };
 
 export default function RootLayout({
@@ -44,6 +51,7 @@ export default function RootLayout({
           font-sans 
           overflow-x-hidden
           w-full
+          pt-safe
         `}
       >
         <ThemeProvider>
