@@ -24,7 +24,7 @@ export default function Home() {
           <BlurFade delay={0.25} inView>
             <div className="relative mb-4 mt-4">
               <Image
-                src="/1.svg"
+                src="/me2.webp"
                 alt="Profile"
                 width={120}
                 height={120}
@@ -254,28 +254,66 @@ export default function Home() {
         </section>
 
         {/* Experiences */}
-        <div className="mt-20">
-          <div className="mt-20 flex justify-between items-center">
-            <h2 data-aos="fade-in" className="font-medium text-2xl">
-              Eduction & Experience
-            </h2>
+        <BlurFade delay={0.75} inView>
+          <div data-aos="fade-in" className="mt-20 mb-10">
+            <div className="mt-20 flex justify-between items-center">
+              <h2 className="font-medium text-2xl">
+                Eduction & Experience
+              </h2>
 
-            <div className="inline-flex items-center">
-              <span className="bg-transparent px-2 py-1 text-sm transition-all duration-300 hover:bg-neutral-100 dark:hover:bg-neutral-800 rounded-md">
-                <Link
-                  href={"/resume.pdf"}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="text-neutral-600 hover:text-neutral-900 dark:text-neutral-400 dark:hover:text-neutral-100 inline-flex items-center gap-1"
-                >
-                  <FileText size={16} />
-                  Resume
-                </Link>
-              </span>
+              <div className="inline-flex items-center">
+                <span className="bg-transparent px-2 py-1 text-sm transition-all duration-300 hover:bg-neutral-100 dark:hover:bg-neutral-800 rounded-md">
+                  <Link
+                    href={"/resume.pdf"}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="text-neutral-600 hover:text-neutral-900 dark:text-neutral-400 dark:hover:text-neutral-100 inline-flex items-center gap-1"
+                  >
+                    <FileText size={16} />
+                    Resume
+                  </Link>
+                </span>
+              </div>
             </div>
 
+            <div className="space-y-8">
+              {/* Education section */}
+              <div>
+                <h3 className="text-lg font-medium mb-3 mt-10">Education</h3>
+                <div className="pl-4 border-1 border-neutral-200 dark:border-neutral-800">
+                  <div className="mb-4">
+                    <div className="flex justify-between mb-1">
+                      <h4 className="font-medium">BTech in Computer Science and Engineering</h4>
+                      <span className="text-neutral-500 text-sm">2020 - 2024</span>
+                    </div>
+                    <p className="text-neutral-600 dark:text-neutral-400">Government College of Engineering, Keonjhar</p>
+                    <p className="text-sm text-neutral-500 mt-1">CGPA: 7.37/10.0</p>
+                  </div>
+                </div>
+              </div>
+
+              {/* Experience Section */}
+              <div>
+                <h3 className="text-lg font-medium mb-3">Experience</h3>
+                <div className="pl-4 border-l border-neutral-200 dark:border-neutral-800">
+                  <div className="mb-4">
+                    <div className="flex justify-between mb-1">
+                      <h4 className="font-medium">Full-stack Developer Intern</h4>
+                      <span className="text-neutral-500 text-sm">May 2024 - July 2024</span>
+                    </div>
+                    <p className="text-neutral-600 dark:text-neutral-400">TECHISMUST</p>
+                    <ul className="list-disc list-inside text-sm text-neutral-500 mt-2">
+                      <li className="ml-2">Worked on full-stack web development projects</li>
+                      <li className="ml-2">Collaborated with team to deliver client solutions</li>
+                      <li className="ml-2">Utilized modern web technologies and frameworks</li>
+                    </ul>
+                  </div>
+                </div>
+              </div>
+              
+            </div>
           </div>
-        </div>
+        </BlurFade>
 
 
       </div>

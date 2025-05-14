@@ -22,7 +22,7 @@ import Link from "next/link";
 const navData = {
     navbar: [
         { href: "/projects", label: "Projects", icon: LayersIcon },
-        { href: "/experience", label: "Experience", icon: BackpackIcon },
+        { href: "/experience", label: "Education & Experience", icon: BackpackIcon },
         { href: "/about", label: "About", icon: AvatarIcon },
         { href: "/contact", label: "Contact", icon: EnvelopeClosedIcon },
     ],
