@@ -11,7 +11,7 @@ import { FileText } from 'lucide-react';
 
 export default function Home() {
   const { posts, loading, error } = useMediumPosts('anuragbehura');
-  const words = ["Developer", "Designer", "Full-stack", "Mobile/Web", "AI/ML", "UI/UX", "Security"];
+  const words = ["Developer", "Full-stack", "Designer", "Mobile/Web", "AI/ML", "UI/UX", "Security"];
 
   const projects = [
     {
