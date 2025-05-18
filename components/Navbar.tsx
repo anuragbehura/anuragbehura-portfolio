@@ -27,9 +27,9 @@ const navData = {
         { href: "/contact", label: "Contact", icon: EnvelopeClosedIcon },
     ],
     social: [
-        { href: "https://github.com/", label: "GitHub", icon: GitHubLogoIcon },
-        { href: "https://linkedin.com/", label: "LinkedIn", icon: LinkedInLogoIcon },
-        { href: "/resume", label: "Resume", icon: FileTextIcon },
+        { href: "https://github.com/anuragbehura", label: "GitHub", icon: GitHubLogoIcon },
+        { href: "https://linkedin.com/in/anuragbehura", label: "LinkedIn", icon: LinkedInLogoIcon },
+        { href: "/AnuragBehuraNew.pdf", label: "Resume", icon: FileTextIcon },
     ],
 };
 

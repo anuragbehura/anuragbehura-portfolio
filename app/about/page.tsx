@@ -39,7 +39,7 @@ function AboutPage() {
             </p>
             <div className="flex gap-4">
               <Link
-                href="https://github.com/your-username"
+                href="https://github.com/anuragbehura"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="text-neutral-600 hover:text-neutral-900 dark:text-neutral-400 dark:hover:text-neutral-100"
@@ -47,7 +47,7 @@ function AboutPage() {
                 <Github size={20} />
               </Link>
               <Link
-                href="https://linkedin.com/in/your-username"
+                href="https://linkedin.com/in/anuragbehura"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="text-neutral-600 hover:text-neutral-900 dark:text-neutral-400 dark:hover:text-neutral-100"
@@ -55,7 +55,7 @@ function AboutPage() {
                 <Linkedin size={20} />
               </Link>
               <Link
-                href="https://twitter.com/your-username"
+                href="https://twitter.com/_anuragbehura_"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="text-neutral-600 hover:text-neutral-900 dark:text-neutral-400 dark:hover:text-neutral-100"
@@ -65,7 +65,7 @@ function AboutPage() {
             </div>
             <div className="pt-2">
               <Link
-                href={"/resume.pdf"}
+                href={"/AnuragBehuraNew.pdf"}
                 target="_blank"
                 rel="noopener noreferrer"
                 className="inline-flex items-center gap-2 bg-neutral-100 dark:bg-neutral-800 px-3 py-2 rounded-md text-sm transition-all duration-300 hover:bg-neutral-200 dark:hover:bg-neutral-700"
@@ -95,7 +95,7 @@ function AboutPage() {
               experiences and innovative solutions.
             </p>
             <p>
-              Beyond my academic pursuits, I've actively engaged in personal projects and open-source contributions
+              Beyond my academic pursuits, I've actively engaged in personal projects
               to apply my knowledge to real-world challenges. My most notable work includes NextForm, an intuitive
               form builder platform that allows users to easily create, customize, and share forms with a drag-and-drop
               interface.
@@ -118,7 +118,7 @@ function AboutPage() {
             <div>
               <h3 className="text-lg font-medium mb-3">Frontend Development</h3>
               <div className="flex flex-wrap gap-2">
-                {['React', 'Next.js', 'TypeScript', 'JavaScript', 'HTML/CSS', 'Tailwind CSS', 'Redux'].map((skill) => (
+                {['React', 'Next.js', 'Angular', 'TypeScript', 'JavaScript', 'HTML/CSS', 'Tailwind CSS', 'Redux'].map((skill) => (
                   <span key={skill} className="inline-flex items-center rounded-md bg-gray-50 px-2 py-1 text-xs dark:border-neutral-700 dark:bg-neutral-800 font-medium text-gray-600 dark:text-white ring-1 ring-inset ring-gray-500/10">
                     {skill}
                   </span>
@@ -129,7 +129,7 @@ function AboutPage() {
             <div>
               <h3 className="text-lg font-medium mb-3">Backend Development</h3>
               <div className="flex flex-wrap gap-2">
-                {['Node.js', 'Express', 'MongoDB', 'SQL', 'REST API', 'GraphQL', 'Firebase'].map((skill) => (
+                {['Node.js', 'Express', 'MongoDB', 'PostgresSQL', 'REST API'].map((skill) => (
                   <span key={skill} className="inline-flex items-center rounded-md bg-gray-50 px-2 py-1 text-xs dark:border-neutral-700 dark:bg-neutral-800 font-medium text-gray-600 dark:text-white ring-1 ring-inset ring-gray-500/10">
                     {skill}
                   </span>
@@ -140,7 +140,7 @@ function AboutPage() {
             <div>
               <h3 className="text-lg font-medium mb-3">Tools & Technologies</h3>
               <div className="flex flex-wrap gap-2">
-                {['Git', 'Docker', 'AWS', 'Figma', 'VS Code', 'Vercel', 'Netlify'].map((skill) => (
+                {['Git', 'AWS', 'VS Code', 'Vercel', 'Netlify'].map((skill) => (
                   <span key={skill} className="inline-flex items-center rounded-md bg-gray-50 px-2 py-1 text-xs dark:border-neutral-700 dark:bg-neutral-800 font-medium text-gray-600 dark:text-white ring-1 ring-inset ring-gray-500/10">
                     {skill}
                   </span>
@@ -161,7 +161,7 @@ function AboutPage() {
             </p>
             <ul className="list-disc list-inside space-y-2 ml-2">
               <li>Technical Writing - I enjoy sharing my knowledge through blogs on Medium</li>
-              <li>Open Source - Contributing to community projects and learning from others</li>
+              {/* <li>Open Source - Contributing to community projects and learning from others</li> */}
               <li>UI/UX Design - Designing beautiful and intuitive user interfaces</li>
               <li>AI/ML Research - Exploring new applications and possibilities</li>
               <li>Reading - Technical books and sci-fi literature</li>
@@ -183,8 +183,8 @@ function AboutPage() {
               <ul className="space-y-2">
                 <li className="flex items-center gap-2">
                   <span className="font-medium">Email:</span>
-                  <a href="mailto:your.email@example.com" className="text-green-600 dark:text-green-400 hover:underline">
-                    your.email@example.com
+                  <a href="mailto:behura960@gmail.com" className="text-green-600 dark:text-green-400 hover:underline">
+                    behura960@gmail.com
                   </a>
                 </li>
                 <li className="flex items-center gap-2">

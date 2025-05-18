@@ -2,7 +2,7 @@
 
 import React, { useState } from 'react'
 import BlurFade from "@/components/ui/blur-fade";
-import { Send, Mail, Phone, MapPin, Check } from 'lucide-react';
+import { Send, Mail, Phone, MapPin, Check, AlertTriangle } from 'lucide-react';
 
 function ContactPage() {
   const [formData, setFormData] = useState({
@@ -29,11 +29,20 @@ function ContactPage() {
     setSubmitError('');
 
     try {
-      // Here we would typically send the data to a server endpoint
-      // This is just a simulation for demonstration purposes
+      // Send email using our API route
+      const response = await fetch('/api/contact', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify(formData),
+      });
 
-      // Simulate API call delay
-      await new Promise(resolve => setTimeout(resolve, 1500));
+      const data = await response.json();
+
+      if (!response.ok) {
+        throw new Error(data.message || 'Something went wrong');
+      }
 
       // Reset form after successful submission
       setFormData({
@@ -48,9 +57,9 @@ function ContactPage() {
       setTimeout(() => {
         setSubmitSuccess(false);
       }, 5000);
-    } catch (error) {
+    } catch (error:any) {
       console.error('Error submitting form:', error);
-      setSubmitError('Something went wrong. Please try again later.');
+      setSubmitError(error.message || 'Something went wrong. Please try again later.');
     } finally {
       setIsSubmitting(false);
     }
@@ -80,13 +89,13 @@ function ContactPage() {
                 </div>
                 <div>
                   <h3 className="text-sm font-medium">Email</h3>
-                  <a href="mailto:anuragbehura@gmail.com" className="text-sm text-neutral-600 dark:text-neutral-400 hover:text-neutral-900 dark:hover:text-neutral-100 transition-colors">
-                    anuragbehura@gmail.com
+                  <a href="mailto:behura960@gmail.com" className="text-sm text-neutral-600 dark:text-neutral-400 hover:text-neutral-900 dark:hover:text-neutral-100 transition-colors">
+                    behura960@gmail.com
                   </a>
                 </div>
               </div>
 
-              <div className="flex items-center gap-3">
+              {/* <div className="flex items-center gap-3">
                 <div className="p-2 rounded-full bg-neutral-100 dark:bg-neutral-800">
                   <Phone size={18} className="text-neutral-700 dark:text-neutral-300" />
                 </div>
@@ -96,7 +105,7 @@ function ContactPage() {
                     +91 98765 43210
                   </a>
                 </div>
-              </div>
+              </div> */}
 
               <div className="flex items-center gap-3">
                 <div className="p-2 rounded-full bg-neutral-100 dark:bg-neutral-800">
@@ -126,8 +135,9 @@ function ContactPage() {
             )}
 
             {submitError && (
-              <div className="mb-6 p-4 bg-red-50 dark:bg-red-900/20 border border-red-200 dark:border-red-900/30 rounded-lg text-red-800 dark:text-red-300">
-                {submitError}
+              <div className="mb-6 p-4 bg-red-50 dark:bg-red-900/20 border border-red-200 dark:border-red-900/30 rounded-lg text-red-800 dark:text-red-300 flex items-center gap-2">
+                <AlertTriangle size={18} />
+                <span>{submitError}</span>
               </div>
             )}
 
@@ -199,8 +209,8 @@ function ContactPage() {
                 type="submit"
                 disabled={isSubmitting}
                 className={`w-full px-4 py-2 rounded-md font-medium flex items-center justify-center gap-2 transition-all duration-300 ${isSubmitting
-                    ? 'bg-neutral-300 dark:bg-neutral-700 text-neutral-500 dark:text-neutral-400 cursor-not-allowed'
-                    : 'bg-neutral-800 dark:bg-neutral-200 text-white dark:text-neutral-900 hover:bg-neutral-900 dark:hover:bg-white'
+                  ? 'bg-neutral-300 dark:bg-neutral-700 text-neutral-500 dark:text-neutral-400 cursor-not-allowed'
+                  : 'bg-neutral-800 dark:bg-neutral-200 text-white dark:text-neutral-900 hover:bg-neutral-900 dark:hover:bg-white'
                   }`}
               >
                 {isSubmitting ? (
@@ -225,7 +235,7 @@ function ContactPage() {
             <h2 className="font-medium text-2xl mb-6">Find me online</h2>
             <div className="flex flex-wrap gap-4">
               <a
-                href="https://github.com/yourusername"
+                href="https://github.com/anuragbehura"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="px-4 py-3 inline-flex items-center gap-2 rounded-md bg-neutral-50 dark:bg-neutral-800 border border-neutral-200 dark:border-neutral-700 text-neutral-700 dark:text-neutral-300 transition-all hover:bg-neutral-100 dark:hover:bg-neutral-700"
@@ -236,7 +246,7 @@ function ContactPage() {
                 GitHub
               </a>
               <a
-                href="https://www.linkedin.com/in/yourusername"
+                href="https://www.linkedin.com/in/anuragbehura"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="px-4 py-3 inline-flex items-center gap-2 rounded-md bg-neutral-50 dark:bg-neutral-800 border border-neutral-200 dark:border-neutral-700 text-neutral-700 dark:text-neutral-300 transition-all hover:bg-neutral-100 dark:hover:bg-neutral-700"
@@ -249,7 +259,7 @@ function ContactPage() {
                 LinkedIn
               </a>
               <a
-                href="https://twitter.com/yourusername"
+                href="https://twitter.com/_anuragbehura_"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="px-4 py-3 inline-flex items-center gap-2 rounded-md bg-neutral-50 dark:bg-neutral-800 border border-neutral-200 dark:border-neutral-700 text-neutral-700 dark:text-neutral-300 transition-all hover:bg-neutral-100 dark:hover:bg-neutral-700"

@@ -2,7 +2,7 @@
 
 import React from 'react'
 import Link from "next/link";
-import { FileText } from 'lucide-react';
+import { ArrowUpRight, FileText } from 'lucide-react';
 import BlurFade from "@/components/ui/blur-fade";
 
 function ExperienceEducationPage() {
@@ -27,7 +27,7 @@ function ExperienceEducationPage() {
             <div className="inline-flex items-center">
               <span className="bg-transparent px-2 py-1 text-sm transition-all duration-300 hover:bg-neutral-100 dark:hover:bg-neutral-800 rounded-md">
                 <Link
-                  href={"/resume.pdf"}
+                  href={"/AnuragBehuraNew.pdf"}
                   target="_blank"
                   rel="noopener noreferrer"
                   className="text-neutral-600 hover:text-neutral-900 dark:text-neutral-400 dark:hover:text-neutral-100 inline-flex items-center gap-1"
@@ -59,8 +59,8 @@ function ExperienceEducationPage() {
                     <h4 className="font-medium">Higher Secondary Education</h4>
                     <span className="text-neutral-500 text-sm">2018 - 2020</span>
                   </div>
-                  <p className="text-neutral-600 dark:text-neutral-400">Your High School Name</p>
-                  <p className="text-sm text-neutral-500 mt-1">Percentage: XX%</p>
+                  <p className="text-neutral-600 dark:text-neutral-400">Kalinga Bharati Residential College, Cuttack</p>
+                  <p className="text-sm text-neutral-500 mt-1">Percentage: 64%</p>
                 </div>
               </div>
             </div>
@@ -83,7 +83,7 @@ function ExperienceEducationPage() {
                 </div>
 
                 {/* You can add more experience entries here */}
-                <div className="mb-4">
+                {/* <div className="mb-4">
                   <div className="flex justify-between mb-1">
                     <h4 className="font-medium">Open Source Contributor</h4>
                     <span className="text-neutral-500 text-sm">2023 - Present</span>
@@ -94,7 +94,8 @@ function ExperienceEducationPage() {
                     <li className="ml-2">Fixed bugs and implemented new features</li>
                     <li className="ml-2">Collaborated with developers globally</li>
                   </ul>
-                </div>
+                </div> */}
+
               </div>
             </div>
 
@@ -105,7 +106,7 @@ function ExperienceEducationPage() {
                 <div className="mb-4">
                   <h4 className="font-medium mb-2">Programming Languages & Technologies</h4>
                   <div className="flex flex-wrap gap-2">
-                    {['JavaScript', 'TypeScript', 'React', 'Next.js', 'Node.js', 'MongoDB', 'SQL', 'HTML/CSS', 'Python'].map((skill) => (
+                    {['JavaScript', 'TypeScript', 'React', 'Angular', 'Next.js', 'Node.js', 'MongoDB', 'PostgresSQL', 'HTML/CSS', 'Python'].map((skill) => (
                       <span key={skill} className="inline-flex items-center rounded-md bg-gray-50 px-2 py-1 text-xs dark:border-neutral-700 dark:bg-neutral-800 font-medium text-gray-600 dark:text-white ring-1 ring-inset ring-gray-500/10">
                         {skill}
                       </span>
@@ -116,7 +117,7 @@ function ExperienceEducationPage() {
                 <div className="mb-4">
                   <h4 className="font-medium mb-2">Tools & Frameworks</h4>
                   <div className="flex flex-wrap gap-2">
-                    {['Git', 'Docker', 'AWS', 'Firebase', 'Tailwind CSS', 'Redux', 'GraphQL', 'Figma'].map((tool) => (
+                    {['Git', 'AWS', 'Firebase', 'Tailwind CSS', 'Redux', 'React Query'].map((tool) => (
                       <span key={tool} className="inline-flex items-center rounded-md bg-gray-50 px-2 py-1 text-xs dark:border-neutral-700 dark:bg-neutral-800 font-medium text-gray-600 dark:text-white ring-1 ring-inset ring-gray-500/10">
                         {tool}
                       </span>
@@ -137,18 +138,30 @@ function ExperienceEducationPage() {
             <div className="p-4 rounded-lg border border-neutral-200 bg-neutral-50 dark:border-neutral-700 dark:bg-neutral-800 transition-all duration-300 hover:scale-[1.01]">
               <div className="flex justify-between mb-1">
                 <h4 className="font-medium">Full Stack Web Development</h4>
-                <span className="text-neutral-500 text-sm">2023</span>
+                <span className="text-neutral-500 text-sm">2024</span>
               </div>
-              <p className="text-neutral-600 dark:text-neutral-400">Provider Name</p>
+              <p className="text-neutral-600 dark:text-neutral-400 mb-2">TECHISMUST</p>
+              <Link href={'/certificates/TECHISMUST.pdf'} rel="noopener noreferrer" target="_blank">
+                <button
+                  type="button"
+                  className="transition-all duration-300 hover:scale-105 hover:shadow-md dark:border-neutral-600 dark:bg-neutral-700 rounded-md bg-gray-50 dark:text-white px-2 py-1 text-xs font-medium ring-1 ring-inset text-gray-800 shadow-sm hover:bg-gray-50 disabled:opacity-50 disabled:pointer-events-none dark:hover:bg-neutral-800 ring-gray-500/10"
+                >
+                  <div className="flex items-center justify-center">
+                    View 
+                    <ArrowUpRight size={16} className="ml-1 text-green-500" />
+                  </div>
+                </button>
+              </Link>
             </div>
 
-            <div className="p-4 rounded-lg border border-neutral-200 bg-neutral-50 dark:border-neutral-700 dark:bg-neutral-800 transition-all duration-300 hover:scale-[1.01]">
+            {/* <div className="p-4 rounded-lg border border-neutral-200 bg-neutral-50 dark:border-neutral-700 dark:bg-neutral-800 transition-all duration-300 hover:scale-[1.01]">
               <div className="flex justify-between mb-1">
                 <h4 className="font-medium">Machine Learning Specialization</h4>
                 <span className="text-neutral-500 text-sm">2022</span>
               </div>
               <p className="text-neutral-600 dark:text-neutral-400">Provider Name</p>
-            </div>
+            </div> */}
+
           </div>
         </div>
       </BlurFade>

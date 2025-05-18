@@ -14,29 +14,31 @@ function ProjectsPage() {
       title: "NextForm🤩",
       description: "NextForm is an intuitive form builder platform that allows users to easily create, customize, and share forms with a drag-and-drop interface.",
       image: "/projects/1.png",
+      readMore: "https://github.com/anuragbehura/next-form",
       link: "https://next-form-ab.vercel.app/"
     },
     {
       id: 2,
       title: "Project Two",
-      description: "A comprehensive project description that highlights the key features and technologies used in this application.",
-      image: "/projects/1.png", // Replace with actual image
-      link: "https://project-link.com"
+      description: "Up coming Project",
+      image: "/projects/comingSoon.jpg", // Replace with actual image
+      readMore: "",
+      link: "/projects"
     },
-    {
-      id: 3,
-      title: "Project Three",
-      description: "An innovative solution that addresses real-world problems using cutting-edge technologies and user-centered design principles.",
-      image: "/projects/1.png", // Replace with actual image
-      link: "https://project-link.com"
-    },
-    {
-      id: 4,
-      title: "Project Four",
-      description: "A scalable web application built with modern frameworks to deliver a seamless and responsive user experience across devices.",
-      image: "/projects/1.png", // Replace with actual image
-      link: "https://project-link.com"
-    }
+    // {
+    //   id: 3,
+    //   title: "Project Three",
+    //   description: "An innovative solution that addresses real-world problems using cutting-edge technologies and user-centered design principles.",
+    //   image: "/projects/1.png", // Replace with actual image
+    //   link: "https://project-link.com"
+    // },
+    // {
+    //   id: 4,
+    //   title: "Project Four",
+    //   description: "A scalable web application built with modern frameworks to deliver a seamless and responsive user experience across devices.",
+    //   image: "/projects/1.png", // Replace with actual image
+    //   link: "https://project-link.com"
+    // }
   ];
 
   return (
@@ -65,7 +67,7 @@ function ProjectsPage() {
                         {project.description}
                       </p>
                       <div className="mt-4 flex flex-wrap gap-2">
-                        <Link href={`/projects/${project.id}`}>
+                        <Link href={project.readMore}>
                           <button
                             type="button"
                             className="transition-all duration-300 hover:scale-105 hover:shadow-md rounded-md px-2 py-1 text-xs font-medium text-gray-600 ring-1 ring-inset bg-white shadow-sm hover:bg-gray-50 disabled:opacity-50 disabled:pointer-events-none dark:bg-neutral-900 dark:border-neutral-700 dark:text-white dark:hover:bg-neutral-800 ring-gray-500/10"
